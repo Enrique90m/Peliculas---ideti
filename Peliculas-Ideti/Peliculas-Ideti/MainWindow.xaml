@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Peliculas" Height="474" Width="724">
     <Grid>
-        <GroupBox Header="Mostrar por: " Height="41" HorizontalAlignment="Left" Margin="30,24,0,0" Name="groupBoxMostrarPor" VerticalAlignment="Top" Width="241"></GroupBox>
+        <GroupBox Header="Mostrar por: " Height="53" HorizontalAlignment="Left" Margin="30,24,0,0" Name="groupBoxMostrarPor" VerticalAlignment="Top" Width="242">
+            <RadioButton Content="Genero" Height="16" Name="radioButtonGenero2" />
+        </GroupBox>
         <Grid Margin="24,26,438,422">
             <RadioButton Content="Genero" Height="16" HorizontalAlignment="Left" Margin="18,20,0,0" Name="radioButton_Genero" VerticalAlignment="Top" />
             <RadioButton Content="Año" Height="16" HorizontalAlignment="Left" Margin="142,20,0,0" Name="radioButton_Ano" VerticalAlignment="Top" />
@@ -38,5 +40,6 @@
         <Button Content="Atras" Height="67" HorizontalAlignment="Left" Margin="36,340,0,0" Name="button_Atras" VerticalAlignment="Top" Width="141" />
         <Button Content="Siguiente" Height="67" HorizontalAlignment="Left" Margin="235,340,0,0" Name="button_Siguiente" VerticalAlignment="Top" Width="141" />
         <Button Content="Cerrar" Height="67" HorizontalAlignment="Left" Margin="540,340,0,0" Name="button_Cerrar" VerticalAlignment="Top" Width="141" />
+        <RadioButton Content="Año" Height="16" HorizontalAlignment="Left" Margin="163,48,0,0" Name="radioButton_Ano2" VerticalAlignment="Top" />
     </Grid>
 </Window>
