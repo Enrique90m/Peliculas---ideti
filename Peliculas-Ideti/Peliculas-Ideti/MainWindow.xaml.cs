@@ -51,6 +51,11 @@ namespace Peliculas_Ideti
                 MessageBox.Show("Selecciona al menos un genero!","Error de busqueda",MessageBoxButton.OK,MessageBoxImage.Error);
                 return;
             }
+
+            //HOLAAAAAAAAA
+            ///ASDASDADAD/AD
+            ////AD/ADASDASD}
+            //ASDASDASDASD
         }
 
        
