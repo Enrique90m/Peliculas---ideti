@@ -64,10 +64,12 @@ namespace Peliculas_Ideti
 
         private void button_Buscar_Click(object sender, RoutedEventArgs e)
         {
-            //Valida que seleccione al menos un genero, o en caso contrario, que capture un año de busqueda
-            if (checkBox_Comedia.IsChecked == false && checkBox_Drama.IsChecked == false && checkBox_Ficcion.IsChecked == false && groupBox_Generos.IsEnabled == true)
+            //limplio la lista de peliculas a desplegar
+            desplegar.Clear();
+            //Valida que seleccione al menos un genero
+            if (checkBox_Comedia.IsChecked == false && checkBox_Drama.IsChecked == false && checkBox_Ficcion.IsChecked == false)
             {
-                MessageBox.Show("Selecciona al menos un genero!","Error de busqueda",MessageBoxButton.OK,MessageBoxImage.Error);
+                MessageBox.Show("Selecciona al menos un genero!", "Error de busqueda", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             else
@@ -77,6 +79,15 @@ namespace Peliculas_Ideti
                     return;
                 }
 
+            for (int i = 0; i < peliculas.Count; i++ )
+            {
+                if (checkBox_Comedia.IsChecked == true)
+                {
+                    if (peliculas.ElementAt(i).getGenero().Equals("Comedia")) {
+                        desplegar.Add(peliculas.ElementAt(i));
+                    }
+                }
+            }
 
         }
 
