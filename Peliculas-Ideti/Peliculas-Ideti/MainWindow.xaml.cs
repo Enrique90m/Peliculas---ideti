@@ -19,6 +19,7 @@ namespace Peliculas_Ideti
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Listas dinamicos para guardar los datos de busqueda y del archivo
         List<Pelicula> peliculas = new List<Pelicula>();
         List<Pelicula> desplegar = new List<Pelicula>();
 
