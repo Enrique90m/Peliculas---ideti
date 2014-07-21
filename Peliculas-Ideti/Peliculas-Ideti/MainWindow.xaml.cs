@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.IO;
 namespace Peliculas_Ideti
 {
     /// <summary>
@@ -22,6 +22,11 @@ namespace Peliculas_Ideti
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void leerArchivo() 
+        {
+            StreamReader leer = new StreamReader();
         }
     }
 }
