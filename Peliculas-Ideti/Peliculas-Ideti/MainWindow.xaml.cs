@@ -26,7 +26,33 @@ namespace Peliculas_Ideti
 
         public void leerArchivo() 
         {
-            StreamReader leer = new StreamReader();
+           // StreamReader leer = new StreamReader();
         }
+
+        private void radioButton_genero2_Checked(object sender, RoutedEventArgs e)
+        {
+            //Activo gropubox de genero y desactivo el de año
+            groupBox_Generos.IsEnabled = true;
+            groupBox_Año.IsEnabled = false;
+        }
+
+        private void radioButton_ano2_Checked(object sender, RoutedEventArgs e)
+        {
+            //Activo gropubox de año y desactivo el de genero
+            groupBox_Año.IsEnabled = true;
+            groupBox_Generos.IsEnabled = false;
+        }
+
+        private void button_Buscar_Click(object sender, RoutedEventArgs e)
+        {
+            //Valida que seleccione al menos un genero
+            if (checkBox_Comedia.IsChecked == false && checkBox_Drama.IsChecked == false && checkBox_Ficcion.IsChecked == false)
+            {
+                MessageBox.Show("Selecciona al menos un genero!","Error de busqueda",MessageBoxButton.OK,MessageBoxImage.Error);
+                return;
+            }
+        }
+
+       
     }
 }

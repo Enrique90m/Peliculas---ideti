@@ -3,26 +3,27 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Peliculas" Height="474" Width="724">
     <Grid>
-        <GroupBox Header="Mostrar por: " Height="53" HorizontalAlignment="Left" Margin="30,24,0,0" Name="groupBoxMostrarPor" VerticalAlignment="Top" Width="242">
-            <RadioButton Content="Genero" Height="16" Name="radioButtonGenero2" />
-        </GroupBox>
         <Grid Margin="24,26,438,422">
             <RadioButton Content="Genero" Height="16" HorizontalAlignment="Left" Margin="18,20,0,0" Name="radioButton_Genero" VerticalAlignment="Top" />
             <RadioButton Content="Año" Height="16" HorizontalAlignment="Left" Margin="142,20,0,0" Name="radioButton_Ano" VerticalAlignment="Top" />
         </Grid>
-        <GroupBox Header="Año" Height="65" HorizontalAlignment="Left" Margin="319,12,0,0" Name="groupBox_Año" VerticalAlignment="Top" Width="265">
+        <GroupBox Header="Año" Height="65" HorizontalAlignment="Left" Margin="319,12,0,0" Name="groupBox_Año" VerticalAlignment="Top" Width="265" IsEnabled="False">
             <Grid>
                 <TextBox Height="20" HorizontalAlignment="Left" Margin="6,11,0,0" Name="textBox1" VerticalAlignment="Top" Width="211" />
             </Grid>
         </GroupBox>
-        <GroupBox Header="Seleccionar generos" Height="74" HorizontalAlignment="Left" Margin="30,83,0,0" Name="groupBox1" VerticalAlignment="Top" Width="478">
+        <GroupBox Header="Seleccionar generos" Height="74" HorizontalAlignment="Left" Margin="30,83,0,0" Name="groupBox_Generos" VerticalAlignment="Top" Width="478">
             <Grid>
-                <CheckBox Content="Comedia" Height="16" HorizontalAlignment="Left" Margin="26,18,0,0" Name="checkBox_Comedia" VerticalAlignment="Top" />
-                <CheckBox Content="Drama" Height="16" HorizontalAlignment="Left" Margin="127,18,0,0" Name="checkBox_Drama" VerticalAlignment="Top" />
-                <CheckBox Content="Ficcion" Height="16" HorizontalAlignment="Left" Margin="257,18,0,0" Name="checkBox_Ficcion" VerticalAlignment="Top" />
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="58*" />
+                    <ColumnDefinition Width="408*" />
+                </Grid.ColumnDefinitions>
+                <CheckBox Content="Comedia" Height="16" HorizontalAlignment="Left" Margin="26,18,0,0" Name="checkBox_Comedia" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                <CheckBox Content="Drama" Height="16" HorizontalAlignment="Left" Margin="69,18,0,0" Name="checkBox_Drama" VerticalAlignment="Top" Grid.Column="1" />
+                <CheckBox Content="Ficcion" Height="16" HorizontalAlignment="Left" Margin="199,18,0,0" Name="checkBox_Ficcion" VerticalAlignment="Top" Grid.Column="1" />
             </Grid>
         </GroupBox>
-        <Button Content="Buscar" Height="67" HorizontalAlignment="Left" Margin="540,90,0,0" Name="button_Buscar" VerticalAlignment="Top" Width="141" />
+        <Button Content="Buscar" Height="67" HorizontalAlignment="Left" Margin="540,90,0,0" Name="button_Buscar" VerticalAlignment="Top" Width="141" Click="button_Buscar_Click" />
         <GroupBox Header="Resultados" Height="135" HorizontalAlignment="Left" Margin="24,174,0,0" Name="groupBox_Resultados" VerticalAlignment="Top" Width="560">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -40,6 +41,11 @@
         <Button Content="Atras" Height="67" HorizontalAlignment="Left" Margin="36,340,0,0" Name="button_Atras" VerticalAlignment="Top" Width="141" />
         <Button Content="Siguiente" Height="67" HorizontalAlignment="Left" Margin="235,340,0,0" Name="button_Siguiente" VerticalAlignment="Top" Width="141" />
         <Button Content="Cerrar" Height="67" HorizontalAlignment="Left" Margin="540,340,0,0" Name="button_Cerrar" VerticalAlignment="Top" Width="141" />
-        <RadioButton Content="Año" Height="16" HorizontalAlignment="Left" Margin="163,48,0,0" Name="radioButton_Ano2" VerticalAlignment="Top" />
+        <GroupBox Header="Mostrar por" Height="59" HorizontalAlignment="Left" Margin="30,12,0,0" Name="groupBox1" VerticalAlignment="Top" Width="234">
+            <Grid>
+                <RadioButton Content="Genero" Height="16" HorizontalAlignment="Left" Margin="16,13,0,0" Name="radioButton_genero2" VerticalAlignment="Top" Checked="radioButton_genero2_Checked" IsChecked="True" />
+                <RadioButton Content="Año" Height="16" HorizontalAlignment="Left" Margin="114,14,0,0" Name="radioButton_ano2" VerticalAlignment="Top" Checked="radioButton_ano2_Checked" />
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>
