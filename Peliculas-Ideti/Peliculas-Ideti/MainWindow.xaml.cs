@@ -19,6 +19,7 @@ namespace Peliculas_Ideti
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Pelicula> peliculas = new List<Pelicula>();
         public MainWindow()
         {
             InitializeComponent();
@@ -26,7 +27,21 @@ namespace Peliculas_Ideti
 
         public void leerArchivo() 
         {
-           // StreamReader leer = new StreamReader();
+            StreamReader leer = new StreamReader("peliculas.txt");
+            String linea;
+            String[] array;
+            String titulo;
+            String genero;
+            int anio;
+            while((linea = leer.ReadLine())!= null)
+            {
+                array = linea.Split('#');
+                titulo = array[1];
+                genero = array[0];
+                anio = int.Parse(array[2]);
+                peliculas.Add(new Pelicula(titulo,genero,anio));
+            }
+
         }
 
         private void radioButton_genero2_Checked(object sender, RoutedEventArgs e)
