@@ -20,9 +20,12 @@ namespace Peliculas_Ideti
     public partial class MainWindow : Window
     {
         List<Pelicula> peliculas = new List<Pelicula>();
+        List<Pelicula> desplegar = new List<Pelicula>();
+
         public MainWindow()
         {
             InitializeComponent();
+            leerArchivo();
         }
 
         public void leerArchivo() 
