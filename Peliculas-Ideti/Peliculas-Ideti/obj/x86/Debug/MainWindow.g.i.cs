@@ -66,7 +66,7 @@ namespace Peliculas_Ideti {
         
         #line 12 "..\..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox textBox1;
+        internal System.Windows.Controls.TextBox textBox_Ano2;
         
         #line default
         #line hidden
@@ -255,7 +255,7 @@ namespace Peliculas_Ideti {
             this.groupBox_Año = ((System.Windows.Controls.GroupBox)(target));
             return;
             case 4:
-            this.textBox1 = ((System.Windows.Controls.TextBox)(target));
+            this.textBox_Ano2 = ((System.Windows.Controls.TextBox)(target));
             return;
             case 5:
             this.groupBox_Generos = ((System.Windows.Controls.GroupBox)(target));

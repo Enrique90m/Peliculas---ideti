@@ -64,14 +64,20 @@ namespace Peliculas_Ideti
 
         private void button_Buscar_Click(object sender, RoutedEventArgs e)
         {
-            //Valida que seleccione al menos un genero
-            if (checkBox_Comedia.IsChecked == false && checkBox_Drama.IsChecked == false && checkBox_Ficcion.IsChecked == false)
+            //Valida que seleccione al menos un genero, o en caso contrario, que capture un año de busqueda
+            if (checkBox_Comedia.IsChecked == false && checkBox_Drama.IsChecked == false && checkBox_Ficcion.IsChecked == false && groupBox_Generos.IsEnabled == true)
             {
                 MessageBox.Show("Selecciona al menos un genero!","Error de busqueda",MessageBoxButton.OK,MessageBoxImage.Error);
                 return;
             }
+            else
+                if(string.IsNullOrEmpty(textBox_Ano2.Text))
+                {
+                    MessageBox.Show("Captura el año a buscar!", "Error de busqueda", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
 
-           
+
         }
 
        
