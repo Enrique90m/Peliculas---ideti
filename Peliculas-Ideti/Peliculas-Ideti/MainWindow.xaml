@@ -1,13 +1,42 @@
 ﻿<Window x:Class="Peliculas_Ideti.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="347" Width="727">
+        Title="Peliculas" Height="474" Width="724">
     <Grid>
-        <GroupBox Header="Mostrar por: " Height="64" HorizontalAlignment="Left" Margin="30,24,0,0" Name="groupBoxMostrarPor" VerticalAlignment="Top" Width="253">
+        <GroupBox Header="Mostrar por: " Height="41" HorizontalAlignment="Left" Margin="30,24,0,0" Name="groupBoxMostrarPor" VerticalAlignment="Top" Width="241"></GroupBox>
+        <Grid Margin="24,26,438,422">
+            <RadioButton Content="Genero" Height="16" HorizontalAlignment="Left" Margin="18,20,0,0" Name="radioButton_Genero" VerticalAlignment="Top" />
+            <RadioButton Content="Año" Height="16" HorizontalAlignment="Left" Margin="142,20,0,0" Name="radioButton_Ano" VerticalAlignment="Top" />
+        </Grid>
+        <GroupBox Header="Año" Height="65" HorizontalAlignment="Left" Margin="319,12,0,0" Name="groupBox_Año" VerticalAlignment="Top" Width="265">
             <Grid>
-                <RadioButton Content="Genero" Height="16" HorizontalAlignment="Left" Margin="18,20,0,0" Name="radioButton_Genero" VerticalAlignment="Top" />
-                <RadioButton Content="Año" Height="16" HorizontalAlignment="Left" Margin="142,20,0,0" Name="radioButton_Ano" VerticalAlignment="Top" />
+                <TextBox Height="20" HorizontalAlignment="Left" Margin="6,11,0,0" Name="textBox1" VerticalAlignment="Top" Width="211" />
             </Grid>
         </GroupBox>
+        <GroupBox Header="Seleccionar generos" Height="74" HorizontalAlignment="Left" Margin="30,83,0,0" Name="groupBox1" VerticalAlignment="Top" Width="478">
+            <Grid>
+                <CheckBox Content="Comedia" Height="16" HorizontalAlignment="Left" Margin="26,18,0,0" Name="checkBox_Comedia" VerticalAlignment="Top" />
+                <CheckBox Content="Drama" Height="16" HorizontalAlignment="Left" Margin="127,18,0,0" Name="checkBox_Drama" VerticalAlignment="Top" />
+                <CheckBox Content="Ficcion" Height="16" HorizontalAlignment="Left" Margin="257,18,0,0" Name="checkBox_Ficcion" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+        <Button Content="Buscar" Height="67" HorizontalAlignment="Left" Margin="540,90,0,0" Name="button_Buscar" VerticalAlignment="Top" Width="141" />
+        <GroupBox Header="Resultados" Height="135" HorizontalAlignment="Left" Margin="24,174,0,0" Name="groupBox_Resultados" VerticalAlignment="Top" Width="560">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="28*" />
+                    <ColumnDefinition Width="520*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Nombre: " Height="28" HorizontalAlignment="Left" Margin="6,25,0,0" Name="label1" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                <Label Content="Genero: " Height="28" HorizontalAlignment="Left" Margin="12,68,0,0" Name="label2" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                <Label Content="Año: " Height="28" HorizontalAlignment="Left" Margin="234,68,0,0" Name="label3" VerticalAlignment="Top" Grid.Column="1" />
+                <TextBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="32,25,0,0" Name="textBox_Nombre" VerticalAlignment="Top" Width="418" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="276,68,0,0" Name="textBox_Ano" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="32,68,0,0" Name="textBox_Genero" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+            </Grid>
+        </GroupBox>
+        <Button Content="Atras" Height="67" HorizontalAlignment="Left" Margin="36,340,0,0" Name="button_Atras" VerticalAlignment="Top" Width="141" />
+        <Button Content="Siguiente" Height="67" HorizontalAlignment="Left" Margin="235,340,0,0" Name="button_Siguiente" VerticalAlignment="Top" Width="141" />
+        <Button Content="Cerrar" Height="67" HorizontalAlignment="Left" Margin="540,340,0,0" Name="button_Cerrar" VerticalAlignment="Top" Width="141" />
     </Grid>
 </Window>
