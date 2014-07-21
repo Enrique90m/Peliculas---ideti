@@ -67,10 +67,7 @@ namespace Peliculas_Ideti
                 return;
             }
 
-            //HOLAAAAAAAAA
-            ///ASDASDADAD/AD
-            ////AD/ADASDASD}
-            //ASDASDASDASD
+           
         }
 
        
