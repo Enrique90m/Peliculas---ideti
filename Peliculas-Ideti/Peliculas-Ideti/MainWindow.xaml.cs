@@ -66,30 +66,50 @@ namespace Peliculas_Ideti
         {
             //limplio la lista de peliculas a desplegar
             desplegar.Clear();
+
             //Valida que seleccione al menos un genero
-            if (checkBox_Comedia.IsChecked == false && checkBox_Drama.IsChecked == false && checkBox_Ficcion.IsChecked == false)
+            if (checkBox_Comedia.IsChecked == false && checkBox_Drama.IsChecked == false && checkBox_Ficcion.IsChecked == false && groupBox_Generos.IsEnabled == true)
             {
                 MessageBox.Show("Selecciona al menos un genero!", "Error de busqueda", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            else
-                if(string.IsNullOrEmpty(textBox_Ano2.Text))
-                {
-                    MessageBox.Show("Captura el año a buscar!", "Error de busqueda", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
 
+            if (string.IsNullOrEmpty(textBox_Ano2.Text) && groupBox_Año.IsEnabled == true)
+            {
+                MessageBox.Show("Captura el año a buscar!", "Error de busqueda", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+
+            //Ciclo para buscar peliculas que cumplan con el criterio
             for (int i = 0; i < peliculas.Count; i++ )
             {
                 if (checkBox_Comedia.IsChecked == true)
-                {
-                    if (peliculas.ElementAt(i).getGenero().Equals("Comedia")) {
+                    if (peliculas.ElementAt(i).getGenero().Equals("comedia")) {
                         desplegar.Add(peliculas.ElementAt(i));
                     }
-                }
+
             }
 
+
+
+
+            //Ya se tiene el arreglo con datos de busqueda, primero valido que tenga datos
+            if (desplegar.Count == 0)
+            {
+                MessageBox.Show("No se encontraron peliculas!", "Mensaje de sistema", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            //Si se tienen datos en el arreglo, por lo tanto muestro el primero en los textbox
+            textBox_Nombre.Text = desplegar[0].getTitulo();
+            textBox_Genero.Text = desplegar[0].getGenero();
+            textBox_Ano.Text = desplegar[0].getAnio().ToString();
+
         }
+
+
+
 
        
     }
