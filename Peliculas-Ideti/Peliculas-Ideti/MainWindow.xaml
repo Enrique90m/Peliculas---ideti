@@ -33,14 +33,14 @@
                 <Label Content="Nombre: " Height="28" HorizontalAlignment="Left" Margin="6,25,0,0" Name="label1" VerticalAlignment="Top" Grid.ColumnSpan="2" />
                 <Label Content="Genero: " Height="28" HorizontalAlignment="Left" Margin="12,68,0,0" Name="label2" VerticalAlignment="Top" Grid.ColumnSpan="2" />
                 <Label Content="Año: " Height="28" HorizontalAlignment="Left" Margin="234,68,0,0" Name="label3" VerticalAlignment="Top" Grid.Column="1" />
-                <TextBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="32,25,0,0" Name="textBox_Nombre" VerticalAlignment="Top" Width="418" />
-                <TextBox Height="23" HorizontalAlignment="Left" Margin="276,68,0,0" Name="textBox_Ano" VerticalAlignment="Top" Width="120" Grid.Column="1" />
-                <TextBox Height="23" HorizontalAlignment="Left" Margin="32,68,0,0" Name="textBox_Genero" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                <TextBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="32,25,0,0" Name="textBox_Nombre" VerticalAlignment="Top" Width="418" AcceptsTab="True" ToolTip="Titulo de la Pelicula" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="276,68,0,0" Name="textBox_Ano" VerticalAlignment="Top" Width="120" Grid.Column="1" ToolTip="Año de Estreno" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="32,68,0,0" Name="textBox_Genero" VerticalAlignment="Top" Width="120" Grid.Column="1" ToolTip="Genero de la Pelicula" />
             </Grid>
         </GroupBox>
-        <Button Content="Atras" Height="67" HorizontalAlignment="Left" Margin="36,340,0,0" Name="button_Atras" VerticalAlignment="Top" Width="141" Click="button_Atras_Click" IsEnabled="False" />
-        <Button Content="Siguiente" Height="67" HorizontalAlignment="Left" Margin="235,340,0,0" Name="button_Siguiente" VerticalAlignment="Top" Width="141" IsEnabled="False" Click="button_Siguiente_Click" />
-        <Button Content="Cerrar" Height="67" HorizontalAlignment="Left" Margin="540,340,0,0" Name="button_Cerrar" VerticalAlignment="Top" Width="141" IsEnabled="True" Click="button_Cerrar_Click" />
+        <Button Content="Atras" Height="67" HorizontalAlignment="Left" Margin="36,340,0,0" Name="button_Atras" VerticalAlignment="Top" Width="141" Click="button_Atras_Click" IsEnabled="False" ToolTip="Regresa una Pelicula Atras" />
+        <Button Content="Siguiente" Height="67" HorizontalAlignment="Left" Margin="235,340,0,0" Name="button_Siguiente" VerticalAlignment="Top" Width="141" IsEnabled="False" Click="button_Siguiente_Click" ToolTip="Avanza a la siguiente Pelicula" />
+        <Button Content="Cerrar" Height="67" HorizontalAlignment="Left" Margin="540,340,0,0" Name="button_Cerrar" VerticalAlignment="Top" Width="141" IsEnabled="True" Click="button_Cerrar_Click" ToolTip="Cierra la Aplicacion" />
         <GroupBox Header="Mostrar por" Height="59" HorizontalAlignment="Left" Margin="30,12,0,0" Name="groupBox1" VerticalAlignment="Top" Width="234">
             <Grid>
                 <RadioButton Content="Genero" Height="16" HorizontalAlignment="Left" Margin="16,13,0,0" Name="radioButton_genero2" VerticalAlignment="Top" Checked="radioButton_genero2_Checked" IsChecked="True" />
