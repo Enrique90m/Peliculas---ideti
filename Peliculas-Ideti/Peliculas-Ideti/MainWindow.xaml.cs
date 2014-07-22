@@ -161,6 +161,8 @@ namespace Peliculas_Ideti
             //Decrementa el indice que sirve como puntero en la lista y muestra el dato en el textbox, en caso de que sea menor que 0, desactiva este boton
             iIndice--;
             mMuestraDatosEnTextbox();
+            // activa el botón siguiente
+            button_Siguiente.IsEnabled = true;
             // si ya no hay mas datos se debe desactivar el botón  atras // rafaGithubero
             if (iIndice == 0)
                 button_Atras.IsEnabled = false;
@@ -171,6 +173,8 @@ namespace Peliculas_Ideti
             //Incrementa el indice que sirve como puntero en la lista y muestra el dato en el textbox
             iIndice++;
             mMuestraDatosEnTextbox();
+            // activa el botón atras
+            button_Atras.IsEnabled = true;
             // si ya no hay mas datos se debe desactivar el botón  siguiente // rafaGithubero
             if (iIndice == desplegar.Count-1)
                 button_Siguiente.IsEnabled = false;
