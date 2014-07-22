@@ -40,7 +40,7 @@
         </GroupBox>
         <Button Content="Atras" Height="67" HorizontalAlignment="Left" Margin="36,340,0,0" Name="button_Atras" VerticalAlignment="Top" Width="141" Click="button_Atras_Click" IsEnabled="False" />
         <Button Content="Siguiente" Height="67" HorizontalAlignment="Left" Margin="235,340,0,0" Name="button_Siguiente" VerticalAlignment="Top" Width="141" IsEnabled="False" Click="button_Siguiente_Click" />
-        <Button Content="Cerrar" Height="67" HorizontalAlignment="Left" Margin="540,340,0,0" Name="button_Cerrar" VerticalAlignment="Top" Width="141" IsEnabled="False" Click="button_Cerrar_Click" />
+        <Button Content="Cerrar" Height="67" HorizontalAlignment="Left" Margin="540,340,0,0" Name="button_Cerrar" VerticalAlignment="Top" Width="141" IsEnabled="True" Click="button_Cerrar_Click" />
         <GroupBox Header="Mostrar por" Height="59" HorizontalAlignment="Left" Margin="30,12,0,0" Name="groupBox1" VerticalAlignment="Top" Width="234">
             <Grid>
                 <RadioButton Content="Genero" Height="16" HorizontalAlignment="Left" Margin="16,13,0,0" Name="radioButton_genero2" VerticalAlignment="Top" Checked="radioButton_genero2_Checked" IsChecked="True" />
