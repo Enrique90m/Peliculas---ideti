@@ -117,6 +117,7 @@ namespace Peliculas_Ideti
             if (desplegar.Count == 0)
             {
                 MessageBox.Show("No se encontraron peliculas!", "Mensaje de sistema", MessageBoxButton.OK, MessageBoxImage.Information);
+                button_Siguiente.IsEnabled = false;
                 return;
             }
 
