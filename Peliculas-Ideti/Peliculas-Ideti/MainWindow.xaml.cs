@@ -87,6 +87,9 @@ namespace Peliculas_Ideti
             //limplio la lista de peliculas a desplegar
             desplegar.Clear();
 
+            //Inicializo en 0 el indice 
+            iIndice = 0;
+
             //Valida que seleccione al menos un genero
             if (checkBox_Comedia.IsChecked == false && checkBox_Drama.IsChecked == false && checkBox_Ficcion.IsChecked == false && groupBox_Generos.IsEnabled == true)
             {
@@ -121,22 +124,29 @@ namespace Peliculas_Ideti
                     }
 
 
-            //Ciclo para buscar peliculas que cumplan con el criterio
-            for (int i = 0; i < peliculas.Count; i++ )
-            {
-                //si el checbox comedia esta habilitado y la pelicula contiene el genero comedia entonces se agrega a la lista de desplegar
-                if (checkBox_Comedia.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("comedia"))
-                    desplegar.Add(peliculas.ElementAt(i));
-                //si el checbox drama esta habilitado y la pelicula contiene el genero drama entonces se agrega a la lista de desplegar
-                if(checkBox_Drama.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("drama"))
-                    desplegar.Add(peliculas.ElementAt(i));
-                //si el checbox ficcion esta habilitado y la pelicula contiene el genero ficcion entonces se agrega a la lista de desplegar
-                if(checkBox_Ficcion.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("ficcion"))
-                    desplegar.Add(peliculas.ElementAt(i));
-                //si el checbox anio esta habilitado y la pelicula contiene el genero anio entonces se agrega a la lista de desplegar
-                if (groupBox_Año.IsEnabled && int.Parse(textBox_Ano2.Text) == peliculas.ElementAt(i).getAnio())
-                    desplegar.Add(peliculas.ElementAt(i));
-            }
+            //Agrego validacion que separa las busquedas, antes se realiaba la busqueda por año o por genero en el mismo ciclo, y lo separo
+            //porque cuando buscabas por año y algun checkbox estaba checked, se traia todos los que cumplian con el genero y el año, siendo que solo deben de ser los del año
+            if(groupBox_Generos.IsEnabled == true)
+                //Busca por genero
+                for (int i = 0; i < peliculas.Count; i++ )
+                {
+                    //si el checbox comedia esta habilitado y la pelicula contiene el genero comedia entonces se agrega a la lista de desplegar
+                    if (checkBox_Comedia.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("comedia"))
+                        desplegar.Add(peliculas.ElementAt(i));
+                    //si el checbox drama esta habilitado y la pelicula contiene el genero drama entonces se agrega a la lista de desplegar
+                    if(checkBox_Drama.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("drama"))
+                        desplegar.Add(peliculas.ElementAt(i));
+                    //si el checbox ficcion esta habilitado y la pelicula contiene el genero ficcion entonces se agrega a la lista de desplegar
+                    if(checkBox_Ficcion.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("ficcion"))
+                        desplegar.Add(peliculas.ElementAt(i));
+                }
+            else
+                //Busca por año
+                for (int i = 0; i < peliculas.Count; i++)
+                    //si el checbox anio esta habilitado y la pelicula contiene el genero anio entonces se agrega a la lista de desplegar
+                    if (groupBox_Año.IsEnabled && int.Parse(textBox_Ano2.Text) == peliculas.ElementAt(i).getAnio())
+                        desplegar.Add(peliculas.ElementAt(i));
+                
 
             //Ya se tiene el arreglo con datos de busqueda, primero valido que tenga datos
             if (desplegar.Count == 0)
