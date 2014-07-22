@@ -64,6 +64,7 @@ namespace Peliculas_Ideti
             catch(ArgumentOutOfRangeException x)
             {
                 button_Atras.IsEnabled = false;
+                button_Siguiente.IsEnabled = false;
             }
         }
 
@@ -93,25 +94,49 @@ namespace Peliculas_Ideti
                 return;
             }
 
+            //Valida que halla capturado un ano, que no tenga caracteres y que no tenga demasiados numeros
             if (string.IsNullOrEmpty(textBox_Ano2.Text) && groupBox_Año.IsEnabled == true)
             {
                 MessageBox.Show("Captura el año a buscar!", "Error de busqueda", MessageBoxButton.OK, MessageBoxImage.Error);
+                textBox_Ano2.Focus();
                 return;
             }
+            else
+                if (groupBox_Año.IsEnabled == true)
+                    try
+                    {
+                        int.Parse(textBox_Ano2.Text);
+                    }
+                    catch (FormatException t)
+                    {
+                        MessageBox.Show("Solo puede ingresar carecteres numericos!", "Mensaje de sistema", MessageBoxButton.OK, MessageBoxImage.Information);
+                        textBox_Ano2.Focus();
+                        return;
+                    }
+                    catch (OverflowException t)
+                    {
+                        MessageBox.Show("Captura un numero mas pequeno!", "Mensaje de sistema", MessageBoxButton.OK, MessageBoxImage.Information);
+                        textBox_Ano2.Focus();
+                        return;
+                    }
 
 
             //Ciclo para buscar peliculas que cumplan con el criterio
             for (int i = 0; i < peliculas.Count; i++ )
             {
-                if (checkBox_Comedia.IsChecked == true)
-                    if (peliculas.ElementAt(i).getGenero().Equals("comedia")) {
-                        desplegar.Add(peliculas.ElementAt(i));
-                    }
-
+                //si el checbox comedia esta habilitado y la pelicula contiene el genero comedia entonces se agrega a la lista de desplegar
+                if (checkBox_Comedia.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("comedia"))
+                    desplegar.Add(peliculas.ElementAt(i));
+                //si el checbox drama esta habilitado y la pelicula contiene el genero drama entonces se agrega a la lista de desplegar
+                if(checkBox_Drama.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("drama"))
+                    desplegar.Add(peliculas.ElementAt(i));
+                //si el checbox ficcion esta habilitado y la pelicula contiene el genero ficcion entonces se agrega a la lista de desplegar
+                if(checkBox_Ficcion.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("ficcion"))
+                    desplegar.Add(peliculas.ElementAt(i));
+                //si el checbox anio esta habilitado y la pelicula contiene el genero anio entonces se agrega a la lista de desplegar
+                if (groupBox_Año.IsEnabled && int.Parse(textBox_Ano2.Text) == peliculas.ElementAt(i).getAnio())
+                    desplegar.Add(peliculas.ElementAt(i));
             }
-
-
-
 
             //Ya se tiene el arreglo con datos de busqueda, primero valido que tenga datos
             if (desplegar.Count == 0)
@@ -125,6 +150,8 @@ namespace Peliculas_Ideti
             mMuestraDatosEnTextbox();
 
             //Activo el boton de siguiente
+            // si hay mas de un registro // rafaGithubero
+            if (desplegar.Count > 1)
             button_Siguiente.IsEnabled = true;
 
 
@@ -135,11 +162,30 @@ namespace Peliculas_Ideti
             //Decrementa el indice que sirve como puntero en la lista y muestra el dato en el textbox, en caso de que sea menor que 0, desactiva este boton
             iIndice--;
             mMuestraDatosEnTextbox();
+            // activa el botón siguiente
+            button_Siguiente.IsEnabled = true;
+            // si ya no hay mas datos se debe desactivar el botón  atras // rafaGithubero
+            if (iIndice == 0)
+                button_Atras.IsEnabled = false;
         }
 
+        private void button_Siguiente_Click(object sender, RoutedEventArgs e)
+        {
+            //Incrementa el indice que sirve como puntero en la lista y muestra el dato en el textbox
+            iIndice++;
+            mMuestraDatosEnTextbox();
+            // activa el botón atras
+            button_Atras.IsEnabled = true;
+            // si ya no hay mas datos se debe desactivar el botón  siguiente // rafaGithubero
+            if (iIndice == desplegar.Count-1)
+                button_Siguiente.IsEnabled = false;
+        }
 
+        private void button_Cerrar_Click(object sender, RoutedEventArgs e)
+        {
+            // cierra la aplicacion
+            Close();
+        }
 
-
-       
     }
 }
