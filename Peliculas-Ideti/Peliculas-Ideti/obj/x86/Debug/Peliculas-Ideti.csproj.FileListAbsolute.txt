@@ -11,3 +11,14 @@ C:\Users\Juan Nolazco\Desktop\IDETI\C#\Peliculas-Ideti\Peliculas---ideti\Pelicul
 C:\Users\Juan Nolazco\Desktop\IDETI\C#\Peliculas-Ideti\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\Peliculas-Ideti.pdb
 C:\Users\Juan Nolazco\Desktop\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\Peliculas-Ideti.exe
 C:\Users\Juan Nolazco\Desktop\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\Peliculas-Ideti.pdb
+C:\Users\B19W\Desktop\IDETI\C#\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\Peliculas-Ideti.exe
+C:\Users\B19W\Desktop\IDETI\C#\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\Peliculas-Ideti.pdb
+C:\Users\B19W\Desktop\IDETI\C#\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\bin\Debug\Peliculas-Ideti.exe
+C:\Users\B19W\Desktop\IDETI\C#\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\bin\Debug\Peliculas-Ideti.pdb
+C:\Users\B19W\Desktop\IDETI\C#\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\MainWindow.baml
+C:\Users\B19W\Desktop\IDETI\C#\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\MainWindow.g.cs
+C:\Users\B19W\Desktop\IDETI\C#\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\App.g.cs
+C:\Users\B19W\Desktop\IDETI\C#\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\Peliculas-Ideti_MarkupCompile.cache
+C:\Users\B19W\Desktop\IDETI\C#\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\Peliculas-Ideti.g.resources
+C:\Users\B19W\Desktop\IDETI\C#\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\Peliculas_Ideti.Properties.Resources.resources
+C:\Users\B19W\Desktop\IDETI\C#\Peliculas---ideti\Peliculas-Ideti\Peliculas-Ideti\obj\x86\Debug\Peliculas-Ideti.csproj.GenerateResource.Cache

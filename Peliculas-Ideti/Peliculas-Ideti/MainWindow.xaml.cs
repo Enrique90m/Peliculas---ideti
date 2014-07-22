@@ -93,11 +93,31 @@ namespace Peliculas_Ideti
                 return;
             }
 
+            //Valida que halla capturado un ano, que no tenga caracteres y que no tenga demasiados numeros
             if (string.IsNullOrEmpty(textBox_Ano2.Text) && groupBox_Año.IsEnabled == true)
             {
                 MessageBox.Show("Captura el año a buscar!", "Error de busqueda", MessageBoxButton.OK, MessageBoxImage.Error);
+                textBox_Ano2.Focus();
                 return;
             }
+            else
+                if (groupBox_Año.IsEnabled == true)
+                    try
+                    {
+                        int.Parse(textBox_Ano2.Text);
+                    }
+                    catch (FormatException t)
+                    {
+                        MessageBox.Show("Solo puede ingresar carecteres numericos!", "Mensaje de sistema", MessageBoxButton.OK, MessageBoxImage.Information);
+                        textBox_Ano2.Focus();
+                        return;
+                    }
+                    catch (OverflowException t)
+                    {
+                        MessageBox.Show("Captura un numero mas pequeno!", "Mensaje de sistema", MessageBoxButton.OK, MessageBoxImage.Information);
+                        textBox_Ano2.Focus();
+                        return;
+                    }
 
 
             //Ciclo para buscar peliculas que cumplan con el criterio
@@ -136,9 +156,5 @@ namespace Peliculas_Ideti
             mMuestraDatosEnTextbox();
         }
 
-
-
-
-       
     }
 }
