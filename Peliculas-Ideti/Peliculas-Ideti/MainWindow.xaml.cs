@@ -22,6 +22,7 @@ namespace Peliculas_Ideti
         //Listas dinamicos para guardar los datos de busqueda y del archivo
         List<Pelicula> peliculas = new List<Pelicula>();
         List<Pelicula> desplegar = new List<Pelicula>();
+        int iIndice=0;
 
         public MainWindow()
         {
@@ -46,6 +47,24 @@ namespace Peliculas_Ideti
                 peliculas.Add(new Pelicula(titulo,genero,anio));
             }
 
+        }
+
+        /// <summary>
+        /// Metodo para mostrar en los textbox de resultados, los datos de la pelicula buscada
+        /// </summary>
+        /// <param name="iIndice">Numero del item que se traera de la lista, es decir su indice</param>
+        public void mMuestraDatosEnTextbox()
+        {
+            try
+            {
+                textBox_Nombre.Text = desplegar[iIndice].getTitulo();
+                textBox_Genero.Text = desplegar[iIndice].getGenero();
+                textBox_Ano.Text = desplegar[iIndice].getAnio().ToString();
+            }
+            catch(ArgumentOutOfRangeException x)
+            {
+                button_Atras.IsEnabled = false;
+            }
         }
 
         private void radioButton_genero2_Checked(object sender, RoutedEventArgs e)
@@ -102,10 +121,19 @@ namespace Peliculas_Ideti
             }
 
             //Si se tienen datos en el arreglo, por lo tanto muestro el primero en los textbox
-            textBox_Nombre.Text = desplegar[0].getTitulo();
-            textBox_Genero.Text = desplegar[0].getGenero();
-            textBox_Ano.Text = desplegar[0].getAnio().ToString();
+            mMuestraDatosEnTextbox();
 
+            //Activo el boton de siguiente
+            button_Siguiente.IsEnabled = true;
+
+
+        }
+
+        private void button_Atras_Click(object sender, RoutedEventArgs e)
+        {
+            //Decrementa el indice que sirve como puntero en la lista y muestra el dato en el textbox, en caso de que sea menor que 0, desactiva este boton
+            iIndice--;
+            mMuestraDatosEnTextbox();
         }
 
 

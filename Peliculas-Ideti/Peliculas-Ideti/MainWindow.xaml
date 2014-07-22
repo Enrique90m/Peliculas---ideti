@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Peliculas_Ideti.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Peliculas" Height="474" Width="724">
+        Title="Peliculas" Height="474" Width="724" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Margin="24,26,438,422">
             <RadioButton Content="Genero" Height="16" HorizontalAlignment="Left" Margin="18,20,0,0" Name="radioButton_Genero" VerticalAlignment="Top" />
@@ -38,9 +38,9 @@
                 <TextBox Height="23" HorizontalAlignment="Left" Margin="32,68,0,0" Name="textBox_Genero" VerticalAlignment="Top" Width="120" Grid.Column="1" />
             </Grid>
         </GroupBox>
-        <Button Content="Atras" Height="67" HorizontalAlignment="Left" Margin="36,340,0,0" Name="button_Atras" VerticalAlignment="Top" Width="141" />
-        <Button Content="Siguiente" Height="67" HorizontalAlignment="Left" Margin="235,340,0,0" Name="button_Siguiente" VerticalAlignment="Top" Width="141" />
-        <Button Content="Cerrar" Height="67" HorizontalAlignment="Left" Margin="540,340,0,0" Name="button_Cerrar" VerticalAlignment="Top" Width="141" />
+        <Button Content="Atras" Height="67" HorizontalAlignment="Left" Margin="36,340,0,0" Name="button_Atras" VerticalAlignment="Top" Width="141" Click="button_Atras_Click" IsEnabled="False" />
+        <Button Content="Siguiente" Height="67" HorizontalAlignment="Left" Margin="235,340,0,0" Name="button_Siguiente" VerticalAlignment="Top" Width="141" IsEnabled="False" />
+        <Button Content="Cerrar" Height="67" HorizontalAlignment="Left" Margin="540,340,0,0" Name="button_Cerrar" VerticalAlignment="Top" Width="141" IsEnabled="False" />
         <GroupBox Header="Mostrar por" Height="59" HorizontalAlignment="Left" Margin="30,12,0,0" Name="groupBox1" VerticalAlignment="Top" Width="234">
             <Grid>
                 <RadioButton Content="Genero" Height="16" HorizontalAlignment="Left" Margin="16,13,0,0" Name="radioButton_genero2" VerticalAlignment="Top" Checked="radioButton_genero2_Checked" IsChecked="True" />
