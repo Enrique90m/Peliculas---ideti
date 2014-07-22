@@ -132,13 +132,22 @@ namespace Peliculas_Ideti
                 {
                     //si el checbox comedia esta habilitado y la pelicula contiene el genero comedia entonces se agrega a la lista de desplegar
                     if (checkBox_Comedia.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("comedia"))
+                    {
                         desplegar.Add(peliculas.ElementAt(i));
+                        continue;
+                    }
                     //si el checbox drama esta habilitado y la pelicula contiene el genero drama entonces se agrega a la lista de desplegar
                     if(checkBox_Drama.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("drama"))
+                    {
                         desplegar.Add(peliculas.ElementAt(i));
+                        continue;
+                    }
                     //si el checbox ficcion esta habilitado y la pelicula contiene el genero ficcion entonces se agrega a la lista de desplegar
                     if(checkBox_Ficcion.IsChecked == true && peliculas.ElementAt(i).getGenero().ToLower().Equals("ficcion"))
+                    {
                         desplegar.Add(peliculas.ElementAt(i));
+                        continue;
+                    }
                 }
             else
                 //Busca por año
