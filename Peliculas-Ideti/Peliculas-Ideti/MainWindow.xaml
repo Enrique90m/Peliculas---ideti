@@ -9,7 +9,7 @@
         </Grid>
         <GroupBox Header="Año" Height="65" HorizontalAlignment="Left" Margin="319,12,0,0" Name="groupBox_Año" VerticalAlignment="Top" Width="265" IsEnabled="False">
             <Grid>
-                <TextBox Height="20" HorizontalAlignment="Left" Margin="6,11,0,0" Name="textBox_Ano2" VerticalAlignment="Top" Width="211"/>
+                <TextBox Height="20" HorizontalAlignment="Left" Margin="6,11,0,0" Name="textBox_Ano2" VerticalAlignment="Top" Width="211" ToolTip="Ingresa el año a buscar" />
             </Grid>
         </GroupBox>
         <GroupBox Header="Seleccionar generos" Height="74" HorizontalAlignment="Left" Margin="30,83,0,0" Name="groupBox_Generos" VerticalAlignment="Top" Width="478">
@@ -18,12 +18,12 @@
                     <ColumnDefinition Width="58*" />
                     <ColumnDefinition Width="408*" />
                 </Grid.ColumnDefinitions>
-                <CheckBox Content="Comedia" Height="16" HorizontalAlignment="Left" Margin="26,18,0,0" Name="checkBox_Comedia" VerticalAlignment="Top" Grid.ColumnSpan="2" />
-                <CheckBox Content="Drama" Height="16" HorizontalAlignment="Left" Margin="69,18,0,0" Name="checkBox_Drama" VerticalAlignment="Top" Grid.Column="1" />
-                <CheckBox Content="Ficcion" Height="16" HorizontalAlignment="Left" Margin="199,18,0,0" Name="checkBox_Ficcion" VerticalAlignment="Top" Grid.Column="1" />
+                <CheckBox Content="Comedia" Height="16" HorizontalAlignment="Left" Margin="26,18,0,0" Name="checkBox_Comedia" VerticalAlignment="Top" Grid.ColumnSpan="2" ToolTip="Buscar genero de comedia" />
+                <CheckBox Content="Drama" Height="16" HorizontalAlignment="Left" Margin="69,18,0,0" Name="checkBox_Drama" VerticalAlignment="Top" Grid.Column="1" ToolTip="Buscar genero de drama" />
+                <CheckBox Content="Ficcion" Height="16" HorizontalAlignment="Left" Margin="199,18,0,0" Name="checkBox_Ficcion" VerticalAlignment="Top" Grid.Column="1" ToolTip="Buscar genero de ficcion" />
             </Grid>
         </GroupBox>
-        <Button Content="Buscar" Height="67" HorizontalAlignment="Left" Margin="540,90,0,0" Name="button_Buscar" VerticalAlignment="Top" Width="141" Click="button_Buscar_Click" IsEnabled="True" />
+        <Button Content="Buscar" Height="67" HorizontalAlignment="Left" Margin="540,90,0,0" Name="button_Buscar" VerticalAlignment="Top" Width="141" Click="button_Buscar_Click" IsEnabled="True" ToolTip="Buscar los criterios seleccionados" />
         <GroupBox Header="Resultados" Height="135" HorizontalAlignment="Left" Margin="24,174,0,0" Name="groupBox_Resultados" VerticalAlignment="Top" Width="560">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -43,8 +43,8 @@
         <Button Content="Cerrar" Height="67" HorizontalAlignment="Left" Margin="540,340,0,0" Name="button_Cerrar" VerticalAlignment="Top" Width="141" IsEnabled="True" Click="button_Cerrar_Click" ToolTip="Cierra la Aplicacion" />
         <GroupBox Header="Mostrar por" Height="59" HorizontalAlignment="Left" Margin="30,12,0,0" Name="groupBox1" VerticalAlignment="Top" Width="234">
             <Grid>
-                <RadioButton Content="Genero" Height="16" HorizontalAlignment="Left" Margin="16,13,0,0" Name="radioButton_genero2" VerticalAlignment="Top" Checked="radioButton_genero2_Checked" IsChecked="True" />
-                <RadioButton Content="Año" Height="16" HorizontalAlignment="Left" Margin="114,14,0,0" Name="radioButton_ano2" VerticalAlignment="Top" Checked="radioButton_ano2_Checked" />
+                <RadioButton Content="Genero" Height="16" HorizontalAlignment="Left" Margin="16,13,0,0" Name="radioButton_genero2" VerticalAlignment="Top" Checked="radioButton_genero2_Checked" IsChecked="True" ToolTip="Buscar peliculas por genero" />
+                <RadioButton Content="Año" Height="16" HorizontalAlignment="Left" Margin="114,14,0,0" Name="radioButton_ano2" VerticalAlignment="Top" Checked="radioButton_ano2_Checked" ToolTip="Buscar peliculas por año" />
             </Grid>
         </GroupBox>
     </Grid>
