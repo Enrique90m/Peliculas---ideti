@@ -84,12 +84,18 @@ namespace Peliculas_Ideti
 
         private void button_Buscar_Click(object sender, RoutedEventArgs e)
         {
-            //limplio la lista de peliculas a desplegar
+            //limpio la lista de peliculas a desplegar
             desplegar.Clear();
-
+            // limpio los campos de texto
+            textBox_Nombre.Text = "";
+            textBox_Genero.Text = "";
+            textBox_Ano.Text = "";
+            //se deshabilitan los botones 
+            button_Atras.IsEnabled = false;
+            button_Siguiente.IsEnabled = false;
             //Inicializo en 0 el indice 
             iIndice = 0;
-
+            groupBox_Resultados.Header = "Resultados " ;
             //Valida que seleccione al menos un genero
             if (checkBox_Comedia.IsChecked == false && checkBox_Drama.IsChecked == false && checkBox_Ficcion.IsChecked == false && groupBox_Generos.IsEnabled == true)
             {
@@ -173,6 +179,7 @@ namespace Peliculas_Ideti
             if (desplegar.Count > 1)
             button_Siguiente.IsEnabled = true;
 
+            groupBox_Resultados.Header = "Resultados " + desplegar.Count;
 
         }
 
