@@ -32,7 +32,7 @@ namespace Peliculas_Ideti
 
         public void leerArchivo() 
         {
-            StreamReader leer = new StreamReader("peliculas.txt");
+            StreamReader leer = new StreamReader("peliculas.txt", Encoding.GetEncoding("iso8859-1"));
             String linea;
             String[] array;
             String titulo;
